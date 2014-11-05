@@ -8,12 +8,20 @@
 
 import Cocoa
 
+class MWindow: NSWindow {
+    
+    func canBecomeKeyWindow() -> Bool {
+        return true
+    }
+    
+}
+
 class MText: NSTextField {
     
     override func keyUp(theEvent: NSEvent) {
         if theEvent.keyCode == 36 { //enter
-            let speechSynth = NSSpeechSynthesizer(voice: NSSpeechSynthesizer.defaultVoice())
-            speechSynth.startSpeakingString(self.stringValue)
+            let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
+            appDelegate.speechSynth.startSpeakingString(self.stringValue)
         }
         super.keyUp(theEvent)
     }
@@ -21,8 +29,7 @@ class MText: NSTextField {
 }
 
 class PopOver: NSWindowController {
-
-    @IBOutlet var mwin: MWindow!
+    
     @IBOutlet weak var mtext: MText!
     
     override func windowDidLoad() {
