@@ -19,7 +19,7 @@ class MWindow: NSWindow {
 class MText: NSTextField {
     
     override func keyUp(theEvent: NSEvent) {
-        if theEvent.keyCode == 36 { //enter
+        if theEvent.keyCode == 36 //enter {
             let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
             appDelegate.speechSynth.startSpeakingString(self.stringValue)
             self.stringValue = ""
