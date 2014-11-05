@@ -29,11 +29,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        statusBarItem.title = "FastTTS"
         statusBarItem.image = NSImage(named: "lips")
         statusBarItem.target = self
-        statusBarItem.action = Selector("openWindow:")
+        statusBarItem.menu = menu
+//        statusBarItem.action = Selector("openWindow:")
         
         //Add menuItem to menu
-        menuItem.title = "Clicked"
-        menuItem.action = Selector("setWindowVisible:")
+        menuItem.title = "Quit"
+        menuItem.action = Selector("quit:")
         menuItem.keyEquivalent = ""
         menu.addItem(menuItem)
         
@@ -49,6 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         lastFocusedApp = NSWorkspace.sharedWorkspace().frontmostApplication
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
         popover.showWindow(nil)
+    }
+    
+    @IBAction func quit(sender: AnyObject) {
+        NSApplication.sharedApplication().terminate(nil)
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
