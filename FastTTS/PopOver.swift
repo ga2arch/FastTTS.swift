@@ -22,9 +22,11 @@ class MText: NSTextField {
         if theEvent.keyCode == 36 { //enter
             let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
             appDelegate.speechSynth.startSpeakingString(self.stringValue)
+            self.stringValue = ""
         }
         super.keyUp(theEvent)
     }
+    
     
 }
 
@@ -40,6 +42,7 @@ class PopOver: NSWindowController {
         self.window?.makeKeyWindow()
         
         mtext.becomeFirstResponder()
+        mtext.focusRingType = NSFocusRingType.None
     }
     
     override func cancelOperation(sender: AnyObject?) {
