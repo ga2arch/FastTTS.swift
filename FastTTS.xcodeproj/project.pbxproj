@@ -13,6 +13,10 @@
 		E038F5841A0A32CD0069F55D /* FastTTSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E038F5831A0A32CD0069F55D /* FastTTSTests.swift */; };
 		E038F5A31A0A52AA0069F55D /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E038F5A11A0A52AA0069F55D /* PopOver.swift */; };
 		E038F5A41A0A52AA0069F55D /* PopOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = E038F5A21A0A52AA0069F55D /* PopOver.xib */; };
+		E038F5AB1A0A5D0C0069F55D /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E038F5A61A0A5D0C0069F55D /* DDHotKeyCenter.m */; };
+		E038F5AC1A0A5D0C0069F55D /* DDHotKeyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = E038F5A81A0A5D0C0069F55D /* DDHotKeyTextField.m */; };
+		E038F5AD1A0A5D0C0069F55D /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E038F5AA1A0A5D0C0069F55D /* DDHotKeyUtilities.m */; };
+		E038F5AF1A0A5D170069F55D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E038F5AE1A0A5D170069F55D /* Carbon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,14 @@
 		E038F5831A0A32CD0069F55D /* FastTTSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastTTSTests.swift; sourceTree = "<group>"; };
 		E038F5A11A0A52AA0069F55D /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		E038F5A21A0A52AA0069F55D /* PopOver.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOver.xib; sourceTree = "<group>"; };
+		E038F5A51A0A5D0C0069F55D /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyCenter.h; sourceTree = "<group>"; };
+		E038F5A61A0A5D0C0069F55D /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyCenter.m; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyCenter.m; sourceTree = "<group>"; };
+		E038F5A71A0A5D0C0069F55D /* DDHotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyTextField.h; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyTextField.h; sourceTree = "<group>"; };
+		E038F5A81A0A5D0C0069F55D /* DDHotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyTextField.m; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyTextField.m; sourceTree = "<group>"; };
+		E038F5A91A0A5D0C0069F55D /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyUtilities.h; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyUtilities.h; sourceTree = "<group>"; };
+		E038F5AA1A0A5D0C0069F55D /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyUtilities.m; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyUtilities.m; sourceTree = "<group>"; };
+		E038F5AE1A0A5D170069F55D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		E038F5B01A0A5F4E0069F55D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E038F5AF1A0A5D170069F55D /* Carbon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +72,7 @@
 		E038F5641A0A32CD0069F55D = {
 			isa = PBXGroup;
 			children = (
+				E038F5AE1A0A5D170069F55D /* Carbon.framework */,
 				E038F56F1A0A32CD0069F55D /* FastTTS */,
 				E038F5801A0A32CD0069F55D /* FastTTSTests */,
 				E038F56E1A0A32CD0069F55D /* Products */,
@@ -77,6 +91,13 @@
 		E038F56F1A0A32CD0069F55D /* FastTTS */ = {
 			isa = PBXGroup;
 			children = (
+				E038F5A51A0A5D0C0069F55D /* DDHotKeyCenter.h */,
+				E038F5B01A0A5F4E0069F55D /* Header.h */,
+				E038F5A61A0A5D0C0069F55D /* DDHotKeyCenter.m */,
+				E038F5A71A0A5D0C0069F55D /* DDHotKeyTextField.h */,
+				E038F5A81A0A5D0C0069F55D /* DDHotKeyTextField.m */,
+				E038F5A91A0A5D0C0069F55D /* DDHotKeyUtilities.h */,
+				E038F5AA1A0A5D0C0069F55D /* DDHotKeyUtilities.m */,
 				E038F5721A0A32CD0069F55D /* AppDelegate.swift */,
 				E038F5741A0A32CD0069F55D /* Images.xcassets */,
 				E038F5761A0A32CD0069F55D /* MainMenu.xib */,
@@ -213,7 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E038F5731A0A32CD0069F55D /* AppDelegate.swift in Sources */,
+				E038F5AB1A0A5D0C0069F55D /* DDHotKeyCenter.m in Sources */,
+				E038F5AD1A0A5D0C0069F55D /* DDHotKeyUtilities.m in Sources */,
 				E038F5A31A0A52AA0069F55D /* PopOver.swift in Sources */,
+				E038F5AC1A0A5D0C0069F55D /* DDHotKeyTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +356,7 @@
 				INFOPLIST_FILE = FastTTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = FastTTS/Header.h;
 			};
 			name = Debug;
 		};
@@ -343,6 +368,7 @@
 				INFOPLIST_FILE = FastTTS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = FastTTS/Header.h;
 			};
 			name = Release;
 		};

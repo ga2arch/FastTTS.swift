@@ -6,7 +6,9 @@
 //  Copyright (c) 2014 Gabriele Carrettoni. All rights reserved.
 //
 
+import AppKit
 import Cocoa
+import Carbon
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -31,6 +33,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItem.action = Selector("setWindowVisible:")
         menuItem.keyEquivalent = ""
         menu.addItem(menuItem)
+        
+        var center = DDHotKeyCenter.sharedHotKeyCenter()
+        let r = center.registerHotKeyWithKeyCode(49,
+            modifierFlags: NSEventModifierFlags.CommandKeyMask.rawValue,
+            target: self,
+            action: Selector("openWindow:"),
+            object: nil)
     }
     
     @IBAction func openWindow(sender: AnyObject) {

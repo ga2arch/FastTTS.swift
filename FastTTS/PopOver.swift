@@ -26,8 +26,6 @@ class MText: NSTextField {
         }
         super.keyUp(theEvent)
     }
-    
-    
 }
 
 class PopOver: NSWindowController {
