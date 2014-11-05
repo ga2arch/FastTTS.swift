@@ -40,12 +40,12 @@
 		E038F5831A0A32CD0069F55D /* FastTTSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastTTSTests.swift; sourceTree = "<group>"; };
 		E038F5A11A0A52AA0069F55D /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
 		E038F5A21A0A52AA0069F55D /* PopOver.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOver.xib; sourceTree = "<group>"; };
-		E038F5A51A0A5D0C0069F55D /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyCenter.h; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyCenter.h; sourceTree = "<group>"; };
-		E038F5A61A0A5D0C0069F55D /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyCenter.m; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyCenter.m; sourceTree = "<group>"; };
-		E038F5A71A0A5D0C0069F55D /* DDHotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyTextField.h; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyTextField.h; sourceTree = "<group>"; };
-		E038F5A81A0A5D0C0069F55D /* DDHotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyTextField.m; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyTextField.m; sourceTree = "<group>"; };
-		E038F5A91A0A5D0C0069F55D /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DDHotKeyUtilities.h; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyUtilities.h; sourceTree = "<group>"; };
-		E038F5AA1A0A5D0C0069F55D /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DDHotKeyUtilities.m; path = ../../../../../Esperimenti/DDHotKey/DDHotKeyUtilities.m; sourceTree = "<group>"; };
+		E038F5A51A0A5D0C0069F55D /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
+		E038F5A61A0A5D0C0069F55D /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
+		E038F5A71A0A5D0C0069F55D /* DDHotKeyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyTextField.h; sourceTree = "<group>"; };
+		E038F5A81A0A5D0C0069F55D /* DDHotKeyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyTextField.m; sourceTree = "<group>"; };
+		E038F5A91A0A5D0C0069F55D /* DDHotKeyUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyUtilities.h; sourceTree = "<group>"; };
+		E038F5AA1A0A5D0C0069F55D /* DDHotKeyUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyUtilities.m; sourceTree = "<group>"; };
 		E038F5AE1A0A5D170069F55D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		E038F5B01A0A5F4E0069F55D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
