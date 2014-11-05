@@ -11,6 +11,8 @@
 		E038F5751A0A32CD0069F55D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E038F5741A0A32CD0069F55D /* Images.xcassets */; };
 		E038F5781A0A32CD0069F55D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E038F5761A0A32CD0069F55D /* MainMenu.xib */; };
 		E038F5841A0A32CD0069F55D /* FastTTSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E038F5831A0A32CD0069F55D /* FastTTSTests.swift */; };
+		E038F5971A0A38600069F55D /* PopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E038F5951A0A38600069F55D /* PopOver.swift */; };
+		E038F5981A0A38600069F55D /* PopOver.xib in Resources */ = {isa = PBXBuildFile; fileRef = E038F5961A0A38600069F55D /* PopOver.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,8 @@
 		E038F57D1A0A32CD0069F55D /* FastTTSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastTTSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E038F5821A0A32CD0069F55D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E038F5831A0A32CD0069F55D /* FastTTSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastTTSTests.swift; sourceTree = "<group>"; };
+		E038F5951A0A38600069F55D /* PopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopOver.swift; sourceTree = "<group>"; };
+		E038F5961A0A38600069F55D /* PopOver.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopOver.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				E038F5721A0A32CD0069F55D /* AppDelegate.swift */,
+				E038F5951A0A38600069F55D /* PopOver.swift */,
+				E038F5961A0A38600069F55D /* PopOver.xib */,
 				E038F5741A0A32CD0069F55D /* Images.xcassets */,
 				E038F5761A0A32CD0069F55D /* MainMenu.xib */,
 				E038F5701A0A32CD0069F55D /* Supporting Files */,
@@ -188,6 +194,7 @@
 			files = (
 				E038F5751A0A32CD0069F55D /* Images.xcassets in Resources */,
 				E038F5781A0A32CD0069F55D /* MainMenu.xib in Resources */,
+				E038F5981A0A38600069F55D /* PopOver.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E038F5731A0A32CD0069F55D /* AppDelegate.swift in Sources */,
+				E038F5971A0A38600069F55D /* PopOver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
