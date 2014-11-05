@@ -45,6 +45,8 @@ class PopOver: NSWindowController {
     
     override func cancelOperation(sender: AnyObject?) {
         self.window?.close()
+        let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
+        appDelegate.lastFocusedApp.activateWithOptions(NSApplicationActivationOptions.ActivateIgnoringOtherApps)
     }
     
 }

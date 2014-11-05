@@ -20,6 +20,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menu: NSMenu = NSMenu()
     var menuItem : NSMenuItem = NSMenuItem()
     
+    var lastFocusedApp: NSRunningApplication!
+    
     let speechSynth = NSSpeechSynthesizer(voice: NSSpeechSynthesizer.defaultVoice())
 
     override func awakeFromNib() {
@@ -44,6 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @IBAction func openWindow(sender: AnyObject) {
+        lastFocusedApp = NSWorkspace.sharedWorkspace().frontmostApplication
         NSApplication.sharedApplication().activateIgnoringOtherApps(true)
         popover.showWindow(nil)
     }
