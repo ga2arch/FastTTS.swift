@@ -21,7 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var menuItem : NSMenuItem = NSMenuItem()
     
     var lastFocusedApp: NSRunningApplication!
-    
+
+    let center = DDHotKeyCenter.sharedHotKeyCenter()
     let speechSynth = NSSpeechSynthesizer(voice: NSSpeechSynthesizer.defaultVoice())
 
     override func awakeFromNib() {
@@ -37,13 +38,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         menuItem.action = Selector("quit:")
         menuItem.keyEquivalent = ""
         menu.addItem(menuItem)
-        
-        var center = DDHotKeyCenter.sharedHotKeyCenter()
-        let r = center.registerHotKeyWithKeyCode(49,
-            modifierFlags: NSEventModifierFlags.CommandKeyMask.rawValue,
-            target: self,
-            action: Selector("openWindow:"),
-            object: nil)
     }
     
     @IBAction func openWindow(sender: AnyObject) {
@@ -57,13 +51,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        
+        center.registerHotKeyWithKeyCode(49,
+            modifierFlags: NSEventModifierFlags.CommandKeyMask.rawValue,
+            target: self,
+            action: Selector("openWindow:"),
+            object: nil)
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
+        center.unregisterHotKeyWithKeyCode(49,
+            modifierFlags: NSEventModifierFlags.CommandKeyMask.rawValue)
     }
-
-
 }
 
