@@ -38,6 +38,12 @@ class PopOver: NSWindowController {
         self.window?.styleMask = NSBorderlessWindowMask
         self.window?.center()
         self.window?.makeKeyWindow()
+        
+        mtext.becomeFirstResponder()
+    }
+    
+    override func cancelOperation(sender: AnyObject?) {
+        self.window?.close()
     }
     
 }

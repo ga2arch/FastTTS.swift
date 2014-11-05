@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="PopOver" customModule="FastTTS" customModuleProvider="target">
             <connections>
+                <outlet property="mtext" destination="KYg-XE-WUD" id="M9u-wi-8oc"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
