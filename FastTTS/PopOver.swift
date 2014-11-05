@@ -8,14 +8,6 @@
 
 import Cocoa
 
-class MView: NSView {
-    
-    func canBecomeKeyWindow() -> Bool {
-        return true
-    }
-    
-}
-
 class MText: NSTextField {
     
     override func keyUp(theEvent: NSEvent) {
@@ -30,12 +22,15 @@ class MText: NSTextField {
 
 class PopOver: NSWindowController {
 
+    @IBOutlet var mwin: MWindow!
     @IBOutlet weak var mtext: MText!
     
     override func windowDidLoad() {
         super.windowDidLoad()
-
+        
+        self.window?.styleMask = NSBorderlessWindowMask
         self.window?.center()
+        self.window?.makeKeyWindow()
     }
     
 }
