@@ -8,12 +8,34 @@
 
 import Cocoa
 
+class MView: NSView {
+    
+    func canBecomeKeyWindow() -> Bool {
+        return true
+    }
+    
+}
+
+class MText: NSTextField {
+    
+    override func keyUp(theEvent: NSEvent) {
+        if theEvent.keyCode == 36 { //enter
+            let speechSynth = NSSpeechSynthesizer(voice: NSSpeechSynthesizer.defaultVoice())
+            speechSynth.startSpeakingString(self.stringValue)
+        }
+        super.keyUp(theEvent)
+    }
+    
+}
+
 class PopOver: NSWindowController {
 
+    @IBOutlet weak var mtext: MText!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
 
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        self.window?.center()
     }
     
 }
