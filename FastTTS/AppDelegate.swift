@@ -24,7 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     override func awakeFromNib() {
         statusBarItem = statusBar.statusItemWithLength(-1)
-        statusBarItem.title = "FastTTS"
+//        statusBarItem.title = "FastTTS"
+        statusBarItem.image = NSImage(named: "lips")
         statusBarItem.target = self
         statusBarItem.action = Selector("openWindow:")
         
