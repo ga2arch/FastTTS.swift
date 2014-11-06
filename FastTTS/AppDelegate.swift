@@ -29,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusBarItem = statusBar.statusItemWithLength(-1)
 //        statusBarItem.title = "FastTTS"
         statusBarItem.image = NSImage(named: "lips")
+        statusBarItem.alternateImage = NSImage(named: "lips2")
         statusBarItem.target = self
         statusBarItem.menu = menu
 //        statusBarItem.action = Selector("openWindow:")

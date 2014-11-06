@@ -21,7 +21,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYg-XE-WUD" customClass="MText" customModule="FastTTS" customModuleProvider="target">
-                        <rect key="frame" x="10" y="0.0" width="592" height="50"/>
+                        <rect key="frame" x="10" y="0.0" width="582" height="50"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Say Something" usesSingleLineMode="YES" id="ZOj-nJ-DUL">
                             <font key="font" metaFont="system" size="37"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>

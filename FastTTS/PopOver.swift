@@ -36,6 +36,7 @@ class PopOver: NSWindowController {
         super.windowDidLoad()
         
         self.window?.styleMask = NSBorderlessWindowMask
+        self.window?.opaque = false
         self.window?.center()
         self.window?.makeKeyWindow()
         
