@@ -21,9 +21,27 @@ class MText: NSTextField {
     override func keyUp(theEvent: NSEvent) {
         if theEvent.keyCode == 36  { // enter
             let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
-            appDelegate.speechSynth.startSpeakingString(self.stringValue)
+            
+            switch self.stringValue {
+            case "me la fai dire una cosa ?":
+                let s = NSSound(named: "melafadireunacosa.mp3")
+                s?.play()
+                
+            case "c'è la madama dietro ?":
+                let s = NSSound(named: "celamadamadietro.mp3")
+                s?.play()
+        
+            case "siamo in pizzeria ?":
+                let s = NSSound(named: "siamoinpizzeria.mp3")
+                s?.play()
+                
+            default:
+                appDelegate.speechSynth.startSpeakingString(self.stringValue)
+            }
+            
             self.stringValue = ""
         }
+        
         super.keyUp(theEvent)
     }
 }
@@ -42,6 +60,7 @@ class PopOver: NSWindowController {
         
         mtext.becomeFirstResponder()
         mtext.focusRingType = NSFocusRingType.None
+        
     }
     
     override func cancelOperation(sender: AnyObject?) {
@@ -50,4 +69,11 @@ class PopOver: NSWindowController {
         appDelegate.lastFocusedApp.activateWithOptions(NSApplicationActivationOptions.ActivateIgnoringOtherApps)
     }
     
+    override func controlTextDidChange(obj: NSNotification) {
+        NSLog("HERE")
+
+        let tf: NSControl = obj.object as NSControl
+        tf.complete(nil)
+    }
+
 }
