@@ -75,8 +75,8 @@ class MText: NSTextField {
         var dict: NSMutableDictionary = NSDictionary(contentsOfFile: pls)!.mutableCopy() as NSMutableDictionary
         let p = self.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
-        if let p = dict[p] as Int? {
-            dict[p] = p+1
+        if let v = dict[p] as Int? {
+            dict[p] = v+1
         } else {
             dict[p] = 1
         }
