@@ -29,6 +29,15 @@ class MText: NSTextField {
         super.keyUp(theEvent)
     }
     
+    override func textShouldEndEditing(textObject: NSText) -> Bool {
+        let event = NSApplication.sharedApplication().currentEvent
+        if event?.type == NSEventType.KeyDown && event?.keyCode == 36 || event?.keyCode == 48 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
     func speak() {
         let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
         
@@ -107,5 +116,4 @@ class PopOver: NSWindowController {
         let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
         appDelegate.lastFocusedApp.activateWithOptions(NSApplicationActivationOptions.ActivateIgnoringOtherApps)
     }
-    
 }
