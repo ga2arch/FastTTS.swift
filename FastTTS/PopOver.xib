@@ -27,9 +27,6 @@
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
-                        <connections>
-                            <action selector="controlTextDidChange:" target="-2" id="uX4-mG-BFV"/>
-                        </connections>
                     </textField>
                 </subviews>
             </view>

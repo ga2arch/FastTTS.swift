@@ -8,6 +8,7 @@
 
 import AppKit
 import Cocoa
+import Carbon
 
 class MWindow: NSWindow {
     
@@ -21,31 +22,69 @@ class MText: NSTextField {
     
     override func keyUp(theEvent: NSEvent) {
         if theEvent.keyCode == 36  { // enter
-            let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
+            speak()
+        } else if theEvent.keyCode == 48 { // tab
+            autocomplete()
+        }
+        super.keyUp(theEvent)
+    }
+    
+    func speak() {
+        let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
+        
+        let path = NSHomeDirectory().stringByAppendingPathComponent(".fastTTS")
+        let voicesPath = path.stringByAppendingPathComponent("voices/")
+        let voicesPls = voicesPath.stringByAppendingPathComponent("voices.plist")
+        
+        let dict: [String:String] = NSDictionary(contentsOfFile: voicesPls)! as Dictionary
+        
+        if let filename = dict[self.stringValue] {
+            let filepath = voicesPath.stringByAppendingPathComponent(filename)
+            let s = NSSound(contentsOfFile: filepath, byReference: true)
+            s?.play()
             
-            let path = NSHomeDirectory()
-            let voices = path.stringByAppendingPathComponent(".voices/")
-            let pls = voices.stringByAppendingPathComponent("voices.plist")
-            
-            let dict: [String:String] = NSDictionary(contentsOfFile: pls)! as Dictionary
-            
-            if let filename = dict[self.stringValue] {
-                let filepath = voices.stringByAppendingPathComponent(filename)
-                let s = NSSound(contentsOfFile: filepath, byReference: true)
-                s?.play()
-                
-            } else {
-                appDelegate.speechSynth.startSpeakingString(self.stringValue)
-            }
-            
-            self.stringValue = ""
+        } else {
+            appDelegate.speechSynth.startSpeakingString(self.stringValue)
         }
         
-        super.keyUp(theEvent)
+        save()
+        
+        self.stringValue = ""
+    }
+    
+    func autocomplete() {
+        let path = NSHomeDirectory().stringByAppendingPathComponent(".fastTTS")
+        let pls = path.stringByAppendingPathComponent("history.pls")
+        
+        let dict = NSDictionary(contentsOfFile: pls)!
+        let keys: [String] = dict.keysSortedByValueUsingComparator {
+            ($1 as NSNumber).compare($0 as NSNumber)
+        } as [String]
+        
+        for k in keys {
+            if k.hasPrefix(self.stringValue) {
+                self.stringValue = k
+            }
+        }
+    }
+    
+    func save() {
+        let path = NSHomeDirectory().stringByAppendingPathComponent(".fastTTS")
+        let pls = path.stringByAppendingPathComponent("history.pls")
+        
+        var dict: NSMutableDictionary = NSDictionary(contentsOfFile: pls)!.mutableCopy() as NSMutableDictionary
+        
+        if let p = dict[self.stringValue] as Int? {
+            dict[self.stringValue] = p+1
+        } else {
+            dict[self.stringValue] = 1
+        }
+        
+        dict.writeToFile(pls, atomically: true)
     }
 }
 
-class PopOver: NSWindowController, NSTextFieldDelegate {
+class PopOver: NSWindowController {
     
     @IBOutlet weak var mtext: MText!
     var doingAutocomplete: Bool = false
@@ -60,22 +99,12 @@ class PopOver: NSWindowController, NSTextFieldDelegate {
         
         mtext.becomeFirstResponder()
         mtext.focusRingType = NSFocusRingType.None
-        
-        mtext.delegate? = self
     }
     
     override func cancelOperation(sender: AnyObject?) {
         self.window?.close()
         let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
         appDelegate.lastFocusedApp.activateWithOptions(NSApplicationActivationOptions.ActivateIgnoringOtherApps)
-    }
-    
-    @IBAction override func controlTextDidChange(sender: NSNotification) {
-//        
-//        if !doingAutocomplete {
-//            let tf: NSTextField = sender.object as NSTextField
-//            tf.complete(nil)
-//        }
     }
     
 }
