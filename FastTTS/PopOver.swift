@@ -73,11 +73,12 @@ class MText: NSTextField {
         let pls = path.stringByAppendingPathComponent("history.pls")
         
         var dict: NSMutableDictionary = NSDictionary(contentsOfFile: pls)!.mutableCopy() as NSMutableDictionary
+        let p = self.stringValue.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
-        if let p = dict[self.stringValue] as Int? {
-            dict[self.stringValue] = p+1
+        if let p = dict[p] as Int? {
+            dict[p] = p+1
         } else {
-            dict[self.stringValue] = 1
+            dict[p] = 1
         }
         
         dict.writeToFile(pls, atomically: true)
