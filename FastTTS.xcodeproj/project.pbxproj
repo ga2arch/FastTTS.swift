@@ -17,8 +17,6 @@
 		E038F5AD1A0A5D0C0069F55D /* DDHotKeyUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E038F5AA1A0A5D0C0069F55D /* DDHotKeyUtilities.m */; };
 		E038F5AF1A0A5D170069F55D /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E038F5AE1A0A5D170069F55D /* Carbon.framework */; };
 		E038F5B91A0A6B550069F55D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E038F5B81A0A6B550069F55D /* Images.xcassets */; };
-		E0B46B191A0C3151005E458F /* sounds in Resources */ = {isa = PBXBuildFile; fileRef = E0B46B181A0C3151005E458F /* sounds */; };
-		E0B46B1F1A0C35AF005E458F /* siamoinpizzeria.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0B46B1E1A0C35AF005E458F /* siamoinpizzeria.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +48,6 @@
 		E038F5AE1A0A5D170069F55D /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		E038F5B01A0A5F4E0069F55D /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		E038F5B81A0A6B550069F55D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E0B46B181A0C3151005E458F /* sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; path = sounds; sourceTree = "<group>"; };
-		E0B46B1E1A0C35AF005E458F /* siamoinpizzeria.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = siamoinpizzeria.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +91,6 @@
 		E038F56F1A0A32CD0069F55D /* FastTTS */ = {
 			isa = PBXGroup;
 			children = (
-				E0B46B1E1A0C35AF005E458F /* siamoinpizzeria.mp3 */,
-				E0B46B181A0C3151005E458F /* sounds */,
 				E038F5B81A0A6B550069F55D /* Images.xcassets */,
 				E038F5A51A0A5D0C0069F55D /* DDHotKeyCenter.h */,
 				E038F5B01A0A5F4E0069F55D /* Header.h */,
@@ -219,11 +213,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0B46B191A0C3151005E458F /* sounds in Resources */,
 				E038F5B91A0A6B550069F55D /* Images.xcassets in Resources */,
 				E038F5781A0A32CD0069F55D /* MainMenu.xib in Resources */,
 				E038F5A41A0A52AA0069F55D /* PopOver.xib in Resources */,
-				E0B46B1F1A0C35AF005E458F /* siamoinpizzeria.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

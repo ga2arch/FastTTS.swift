@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Gabriele Carrettoni. All rights reserved.
 //
 
+import AppKit
 import Cocoa
 
 class MWindow: NSWindow {
@@ -22,20 +23,18 @@ class MText: NSTextField {
         if theEvent.keyCode == 36  { // enter
             let appDelegate = NSApplication.sharedApplication().delegate as AppDelegate
             
-            switch self.stringValue {
-            case "me la fai dire una cosa ?":
-                let s = NSSound(named: "melafadireunacosa.mp3")
+            let path = NSHomeDirectory()
+            let voices = path.stringByAppendingPathComponent(".voices/")
+            let pls = voices.stringByAppendingPathComponent("voices.plist")
+            
+            let dict: [String:String] = NSDictionary(contentsOfFile: pls)! as Dictionary
+            
+            if let filename = dict[self.stringValue] {
+                let filepath = voices.stringByAppendingPathComponent(filename)
+                let s = NSSound(contentsOfFile: filepath, byReference: true)
                 s?.play()
                 
-            case "c'è la madama dietro ?":
-                let s = NSSound(named: "celamadamadietro.mp3")
-                s?.play()
-        
-            case "siamo in pizzeria ?":
-                let s = NSSound(named: "siamoinpizzeria.mp3")
-                s?.play()
-                
-            default:
+            } else {
                 appDelegate.speechSynth.startSpeakingString(self.stringValue)
             }
             
@@ -46,10 +45,11 @@ class MText: NSTextField {
     }
 }
 
-class PopOver: NSWindowController {
+class PopOver: NSWindowController, NSTextFieldDelegate {
     
     @IBOutlet weak var mtext: MText!
-    
+    var doingAutocomplete: Bool = false
+
     override func windowDidLoad() {
         super.windowDidLoad()
         
@@ -61,6 +61,7 @@ class PopOver: NSWindowController {
         mtext.becomeFirstResponder()
         mtext.focusRingType = NSFocusRingType.None
         
+        mtext.delegate? = self
     }
     
     override func cancelOperation(sender: AnyObject?) {
@@ -69,11 +70,12 @@ class PopOver: NSWindowController {
         appDelegate.lastFocusedApp.activateWithOptions(NSApplicationActivationOptions.ActivateIgnoringOtherApps)
     }
     
-    override func controlTextDidChange(obj: NSNotification) {
-        NSLog("HERE")
-
-        let tf: NSControl = obj.object as NSControl
-        tf.complete(nil)
+    @IBAction override func controlTextDidChange(sender: NSNotification) {
+//        
+//        if !doingAutocomplete {
+//            let tf: NSTextField = sender.object as NSTextField
+//            tf.complete(nil)
+//        }
     }
-
+    
 }
